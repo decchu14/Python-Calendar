@@ -8,6 +8,8 @@ Text_Editor.py:-Simple Text Editor to Open, Edit and Save Files using Tkinter Li
 ![image](https://user-images.githubusercontent.com/42490741/119803098-c456f000-befc-11eb-81e5-0e82d401e314.png)
 
 Digital_Clock.py:-Simple script to display digital clock using Time and Tkinter Library.
+![image](https://user-images.githubusercontent.com/42490741/120032887-7b945980-c018-11eb-9867-63f6997b52b1.png)
+
 
 
 
