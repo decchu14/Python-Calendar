@@ -11,7 +11,7 @@ Digital_Clock.py:-Simple script to display digital clock using Time and Tkinter 
 ![image](https://user-images.githubusercontent.com/42490741/120032887-7b945980-c018-11eb-9867-63f6997b52b1.png)
 
 Weight_Converter.py:-Simple script to display weight converter gui using Tkinter Library.
-![image](https://user-images.githubusercontent.com/42490741/120118691-774f7400-c1b1-11eb-9d0d-1274c144b9f1.png)
+![image](https://user-images.githubusercontent.com/42490741/120118751-b978b580-c1b1-11eb-941b-9809749ff8e0.png)
 
 
 
