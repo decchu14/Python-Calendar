@@ -10,6 +10,8 @@ Text_Editor.py:-Simple Text Editor to Open, Edit and Save Files using Tkinter Li
 Digital_Clock.py:-Simple script to display digital clock using Time and Tkinter Library.
 ![image](https://user-images.githubusercontent.com/42490741/120032887-7b945980-c018-11eb-9867-63f6997b52b1.png)
 
+Weight_Converter.py:-Simple script to display weight converter gui using Tkinter Library.
+
 
 
 
