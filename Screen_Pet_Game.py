@@ -1,6 +1,45 @@
 from tkinter import Tk, Canvas, NORMAL, HIDDEN
 
 
+def toggle_eyes():
+    current_color = c.itemcget(eye_left, 'fill')
+    new_color = c.body_color if current_color == 'misty rose' else 'misty rose'
+    current_state = c.itemcget(pupil_left, 'state')
+
+
+def blink():
+    toggle_eyes()
+
+
+def toggle_pupils():
+    if not c.eyes_crossed:
+        c.move(pupil_left, 10, -5)
+        c.move(pupil_right, -10, -5)
+        c.eyes_crossed = True
+    else:
+        c.move(pupil_left, -10, 5)
+        c.move(pupil_right, 10, 5)
+        c.eyes_crossed = False
+
+
+def toggle_tongue():
+    if not c.tongue_out:
+        c.itemconfigure(tongue_tip, state=NORMAL)
+        c.itemconfigure(tongue_main, state=NORMAL)
+        c.tongue_out = True
+    else:
+        c.itemconfigure(tongue_tip, state=HIDDEN)
+        c.itemconfigure(tongue_main, state=HIDDEN)
+        c.tongue_out = False
+
+
+def cheeky(event):
+    toggle_tongue()
+    toggle_pupils()
+    hide_happy(event)
+    return
+
+
 def show_happy(event):
     if(event.x >= 20 and event.x <= 350) and (event.y >= 20 and event.y <= 350):
         c.itemconfigure(cheek_left, state=NORMAL)
@@ -8,6 +47,15 @@ def show_happy(event):
         c.itemconfigure(mouth_happy, state=NORMAL)
         c.itemconfigure(mouth_normal, state=HIDDEN)
         c.itemconfigure(mouth_sad, state=HIDDEN)
+    return
+
+
+def hide_happy(event):
+    c.itemconfigure(cheek_left, state=HIDDEN)
+    c.itemconfigure(cheek_right, state=HIDDEN)
+    c.itemconfigure(mouth_happy, state=HIDDEN)
+    c.itemconfigure(mouth_normal, state=NORMAL)
+    c.itemconfigure(mouth_sad, state=HIDDEN)
     return
 
 
@@ -55,4 +103,10 @@ cheek_right = c.create_oval(
 
 c.pack()
 c.bind('<Motion>', show_happy)
+c.bind('<Leave>', hide_happy)
+c.bind('<Double-1>', cheeky)
+
+c.tongue_out = False
+c.eyes_crossed = False
+root.after(1000, blink)
 root.mainloop()
