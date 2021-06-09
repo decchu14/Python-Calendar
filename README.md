@@ -1,7 +1,11 @@
 # Python-GUI
 
+CALENDER GUI
+
+
 tk_cal.py:-The Script to display Calendar GUI using Tkinter and Calendar Library.
 ![image](https://user-images.githubusercontent.com/42490741/119562587-219b5600-bdc4-11eb-9d10-313bfc388a29.png)
+
 
 TEXT EDITOR
 
@@ -11,15 +15,21 @@ Text_Editor.py:-Simple Text Editor to Open, Edit and Save Files using Tkinter Li
 
 
 DIGITAL CLOCK
+
+
 Digital_Clock.py:-Simple script to display digital clock using Time and Tkinter Library.
 ![image](https://user-images.githubusercontent.com/42490741/120032887-7b945980-c018-11eb-9867-63f6997b52b1.png)
 
 
 WEIGHT CONVERTER
+
+
 Weight_Converter.py:-Simple script to display weight converter gui using Tkinter Library.
 ![image](https://user-images.githubusercontent.com/42490741/120118751-b978b580-c1b1-11eb-941b-9809749ff8e0.png)
 
 ENCRYPT AND DECRYPT MESSAGES
+
+
 Encrypt_Decrypt.py:-Simple GUI script to encrypt and decrypt messages by shuffling the characters using Tkinter Library.
 
 
