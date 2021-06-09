@@ -5,10 +5,17 @@ def toggle_eyes():
     current_color = c.itemcget(eye_left, 'fill')
     new_color = c.body_color if current_color == 'misty rose' else 'misty rose'
     current_state = c.itemcget(pupil_left, 'state')
+    new_state = NORMAL if current_state == HIDDEN else HIDDEN
+    c.itemconfigure(pupil_left, state=new_state)
+    c.itemconfigure(pupil_right, state=new_state)
+    c.itemconfigure(eye_left, fill=new_color)
+    c.itemconfigure(eye_right, fill=new_color)
 
 
 def blink():
     toggle_eyes()
+    root.after(250, toggle_eyes)
+    root.after(3000, blink)
 
 
 def toggle_pupils():
@@ -37,6 +44,8 @@ def cheeky(event):
     toggle_tongue()
     toggle_pupils()
     hide_happy(event)
+    root.after(1000, toggle_tongue)
+    root.after(1000, toggle_pupils)
     return
 
 
@@ -57,6 +66,16 @@ def hide_happy(event):
     c.itemconfigure(mouth_normal, state=NORMAL)
     c.itemconfigure(mouth_sad, state=HIDDEN)
     return
+
+
+def sad():
+    if c.happy_level == 0:
+        c.itemconfigure(mouth_happy, state=HIDDEN)
+        c.itemconfigure(mouth_normal, state=HIDDEN)
+        c.itemconfigure(mouth_sad, state=NORMAL)
+    else:
+        c.happy_level -= 1
+    root.after(5000, sad)
 
 
 root = Tk()
@@ -106,7 +125,9 @@ c.bind('<Motion>', show_happy)
 c.bind('<Leave>', hide_happy)
 c.bind('<Double-1>', cheeky)
 
+c.happy_level = 10
 c.tongue_out = False
 c.eyes_crossed = False
 root.after(1000, blink)
+root.after(5000, sad)
 root.mainloop()
